@@ -1,10 +1,10 @@
 import { createTheme } from "@mui/material/styles";
 import { responsiveFontSizes } from "@mui/material";
-import { deepPurple, amber } from "@mui/material/colors";
+import { amber, indigo } from "@mui/material/colors";
 
 const pretheme = createTheme({
   palette: {
-    primary: deepPurple,
+    primary: indigo,
     secondary: amber,
   },
 });
