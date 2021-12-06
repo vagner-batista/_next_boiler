@@ -3,11 +3,11 @@ import { createContext, useReducer } from 'react';
 import * as themes from '../styles/themes';
 
 export const Store = createContext();
+
 const themeNames = Object.keys(themes).filter((t) => t !== undefined);
+
 const initialState = {
-  themeName: themeNames.includes(Cookies.get('themeName'))
-    ? Cookies.get('themeName')
-    : 'default',
+  themeName: process.env.DEFAULT_THEME_NAME || 'default',
   testeVar: 'TESTE',
 };
 
@@ -16,7 +16,6 @@ function reducer(state, action) {
     case 'CHANGE_THEME': {
       const newTheme = action.payload;
       Cookies.set('themeName', newTheme);
-      console.log(newTheme);
       return { ...state, themeName: newTheme };
     }
     default:

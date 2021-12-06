@@ -10,7 +10,6 @@ import useThemes from '../styles/themes';
 export default function LayersOutlined({ title, description, children }) {
   const { state, dispatch } = useContext(Store);
   const { themeName } = state;
-  console.log('THEME_NAME: ', themeName);
   return (
     <div>
       <Head>
