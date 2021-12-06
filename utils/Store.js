@@ -7,7 +7,7 @@ const themeNames = Object.keys(themes).filter((t) => t !== undefined);
 const initialState = {
   themeName: themeNames.includes(Cookies.get('themeName'))
     ? Cookies.get('themeName')
-    : 'default_theme',
+    : 'default',
   testeVar: 'TESTE',
 };
 
@@ -16,7 +16,8 @@ function reducer(state, action) {
     case 'CHANGE_THEME': {
       const newTheme = action.payload;
       Cookies.set('themeName', newTheme);
-      return { ...state, theme: newTheme };
+      console.log(newTheme);
+      return { ...state, themeName: newTheme };
     }
     default:
       return state;

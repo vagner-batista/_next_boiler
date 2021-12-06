@@ -7,6 +7,8 @@ export const themeNames = {
   alternative: secondary_theme,
 };
 
+export const themeNamesList = Object.keys(themeNames);
+
 const useTheme = (theme) => {
   const valid_theme = Object.keys(themeNames).includes(theme)
     ? theme
